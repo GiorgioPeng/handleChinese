@@ -20,19 +20,27 @@ export default function Index() {
   };
   return (
     <div>
-      <p style={{ paddingTop: "10px", paddingLeft: "10px" }}>
+      <p
+        style={{
+          paddingTop: "5px",
+          paddingLeft: "10px",
+          paddingBottom: "0px",
+          marginBottom: "0",
+          fontSize: "10px"
+        }}
+      >
         暂时只支持纯中文
       </p>
       <div
         style={{
           display: "flex",
           justifyContent: "space-around",
-          height: "500px",
+          height: "450px",
           marginTop: "20px"
         }}
       >
         <TextArea
-          style={{ width: "40%" }}
+          style={{ width: "40%", color: "white" }}
           onChange={e => handleInput(e)}
         ></TextArea>
         <div

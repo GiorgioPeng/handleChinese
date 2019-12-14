@@ -1,0 +1,39 @@
+.parent {
+    width: 0;
+    height: 0;
+    border-radius: 45%;
+    box-sizing: border-box;
+    border: 140px solid #000;
+    border-bottom: 140px solid transparent;
+    background-color: #b5932f;
+    transform: scaleX(0.4);
+    filter: blur(20px) contrast(30);
+    position: relative;
+}
+
+.parent div {
+    position: absolute;
+    bottom: -150px;
+    width: 15px;
+    height: 15px;
+    filter: blur(10px);
+    /* transition: all 1s; */
+    animation-name: fire;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes fire {
+    0% {
+        bottom: -150px;
+    }
+
+    50% {
+        bottom: 50px;
+    }
+
+    100% {
+        bottom: -150px;
+    }
+}

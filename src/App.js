@@ -1,30 +1,46 @@
 import React from "react";
+import { useState } from "react";
 import Filter from "./Filter";
 import Phonetic from "./Phonetic";
 import Main from "./Main";
-import Missing from "./Missing";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import "./App.css";
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch,
+  Redirect
+} from "react-router-dom";
 import { Menu, Icon } from "antd";
 const App = () => {
+  const [key, setKey] = useState("main");
+  const handleClick = e => {
+    setKey(e.key);
+  };
   return (
     <div>
       <Router>
-        <Menu mode="horizontal">
-          <Menu.Item>
+        <Menu
+          mode="horizontal"
+          onClick={handleClick}
+          selectedKeys={key}
+          theme="dark"
+        >
+          <Menu.Item key="main">
             <Link to="/">
-              <Icon type="setting" />
+              <Icon type="home" />
               首页
             </Link>
           </Menu.Item>
-          <Menu.Item>
+          <Menu.Item key="phonetic">
             <Link to="/Phonetic">
-              <Icon type="setting" />
+              <Icon type="file-text" />
               文本注音
             </Link>
           </Menu.Item>
-          <Menu.Item>
+          <Menu.Item key="filter">
             <Link to="/Filter">
-              <Icon type="mail" />
+              <Icon type="filter" />
               文本过滤
             </Link>
           </Menu.Item>
@@ -33,7 +49,7 @@ const App = () => {
           <Route path="/" exact component={Main}></Route>
           <Route path="/Phonetic" component={Phonetic} />
           <Route path="/Filter" component={Filter} />
-          <Route component={Missing} />
+          <Redirect to="/"></Redirect>
         </Switch>
       </Router>
     </div>

@@ -30,7 +30,7 @@ export default function Index() {
         }}
       >
         <TextArea
-          style={{ width: "40%" }}
+          style={{ width: "40%", color: "white" }}
           onChange={e => handleInput(e)}
         ></TextArea>
         <div
