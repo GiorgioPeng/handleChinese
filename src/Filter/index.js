@@ -16,8 +16,12 @@ export default function Index() {
   };
   const createPinyin = (val, res) => {
     [res, val] = search(res, val);
-    return `<ruby> ${val}<rt>${res}</rt>
+    let result = "";
+    for (let i in res) {
+      result += `<ruby style="word-break: break-all;white-space: normal;"> ${val[i]}<rt>${res[i]}</rt>
       </ruby>`;
+    }
+    return result;
   };
   return (
     <div>
@@ -31,7 +35,7 @@ export default function Index() {
       >
         <TextArea
           style={{ width: "40%", color: "white" }}
-          onChange={e => handleInput(e)}
+          onPressEnter={e => handleInput(e)}
         ></TextArea>
         <div
           style={{
