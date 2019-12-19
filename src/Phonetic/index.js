@@ -12,9 +12,12 @@ export default function Index() {
   };
   const createPinyin = (val, res) => {
     let result = "";
+    //添加符号处理,因为Pinyin方法会将多个符号占用一个位置
+    let symbolSet = /[,./<>?;':"`~!@#$%^&*()_+-=\\|[\]{} A-Za-z0-9，。、？·！——【】：；‘’“”]{2,}/g;
+    val = val.replace(symbolSet, " ");
     for (let i in res) {
-      result += `<ruby style="word-break: break-all;white-space: normal;"> ${val[i]}<rt>${res[i]}</rt>
-      </ruby>`;
+      result += `<ruby style="word-break: break-all;white-space: normal;"> ${val[i]}<rt>${res[i][0]}</rt>
+        </ruby>`;
     }
     return result;
   };
