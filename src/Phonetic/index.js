@@ -38,7 +38,7 @@ export default function Index() {
         style={{
           display: "flex",
           justifyContent: "space-around",
-          height: "450px",
+          height: "420px",
           marginTop: "20px"
         }}
       >
@@ -51,7 +51,7 @@ export default function Index() {
             width: "40%",
             border: "2px solid #707070",
             fontSize: "20px",
-            overflow: "scroll"
+            overflow: "auto"
           }}
           dangerouslySetInnerHTML={{ __html: content }}
         ></div>
