@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Input } from "antd";
 import Pinyin from "pinyin";
+import "./index.css";
 const { TextArea } = Input;
 export default function Index() {
   const [content, setContent] = useState("");
@@ -23,36 +24,14 @@ export default function Index() {
   };
   return (
     <div>
-      <p
-        style={{
-          paddingTop: "5px",
-          paddingLeft: "10px",
-          paddingBottom: "0px",
-          marginBottom: "0",
-          fontSize: "10px"
-        }}
-      >
-        暂时只支持纯中文
-      </p>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-around",
-          height: "420px",
-          marginTop: "20px"
-        }}
-      >
+      <p>暂时只支持纯中文</p>
+      <div className="inputDiv">
         <TextArea
           style={{ width: "40%", color: "white" }}
           onChange={e => handleInput(e)}
         ></TextArea>
         <div
-          style={{
-            width: "40%",
-            border: "2px solid #707070",
-            fontSize: "20px",
-            overflow: "auto"
-          }}
+          className="resultDiv"
           dangerouslySetInnerHTML={{ __html: content }}
         ></div>
       </div>

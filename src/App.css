@@ -6,3 +6,9 @@ body {
 .ant-input {
   background-color: black !important;
 }
+
+.githubButton {
+  position: fixed;
+  right: 50px;
+  top: 50px
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import GitHubButton from "react-github-btn";
 import Filter from "./Filter";
 import Phonetic from "./Phonetic";
 import Main from "./Main";
@@ -17,8 +18,18 @@ const App = () => {
   const handleClick = e => {
     setKey(e.key);
   };
+  const githubButtonInfo = {
+    href: "https://github.com/giorgiopeng/handleChinese",
+    "datacolor-scheme": "no-preference: light; light: light; dark: dark;",
+    "data-size": "large",
+    "data-show-count": "true",
+    "aria-label": "Star giorgiopeng/handleChinese on GitHub"
+  };
   return (
     <div>
+      <div className="githubButton">
+        <GitHubButton {...githubButtonInfo}>Star</GitHubButton>
+      </div>
       <Router>
         <Menu
           mode="horizontal"

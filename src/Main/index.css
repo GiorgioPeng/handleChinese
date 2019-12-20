@@ -1,3 +1,13 @@
+.mainContent {
+    height: 400px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+    background-color: black
+}
+
 .parent {
     width: 0;
     height: 0;
@@ -36,4 +46,59 @@
     100% {
         bottom: -150px;
     }
+}
+
+.child1 {
+    background-color: black;
+    left: -90px;
+    animation-delay: 1s
+}
+
+.child2 {
+    background-color: black;
+    left: -70px;
+    animation-delay: 2s
+}
+
+.child3 {
+    background-color: black;
+    left: -50px;
+    animation-delay: 1.5s
+}
+
+.child4 {
+    background-color: black;
+    left: -30px;
+    animation-delay: 1s
+}
+
+.child5 {
+    background-color: black;
+    left: 0px;
+    animation-delay: 3s
+}
+
+.child6 {
+    background-color: black;
+    left: 30px;
+    animation-delay: 3s
+}
+
+.child7 {
+    background-color: black;
+
+    left: 50px;
+    animation-delay: 4s
+}
+
+.child8 {
+    background-color: black;
+    left: 70px;
+    animation-delay: 0s
+}
+
+.child9 {
+    background-color: black;
+    left: 90px;
+    animation-delay: 3s
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Input } from "antd";
+import "../Phonetic/index.css";
 import Pinyin from "pinyin";
 import search from "./search";
 const { TextArea } = Input;
@@ -25,36 +26,15 @@ export default function Index() {
   };
   return (
     <div>
-      <p
-        style={{
-          paddingTop: "5px",
-          paddingLeft: "10px",
-          paddingBottom: "0px",
-          marginBottom: "0",
-          fontSize: "10px"
-        }}
-      >
-        请输入需要过滤内容后按ENTER键获取过滤后内容
-      </p>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-around",
-          height: "420px",
-          marginTop: "20px"
-        }}
-      >
+      <p>请输入需要过滤内容</p>
+      <div className="inputDiv">
         <TextArea
           style={{ width: "40%", color: "white" }}
-          onPressEnter={e => handleInput(e)}
+          onChange={e => handleInput(e)}
         ></TextArea>
         <div
-          style={{
-            width: "40%",
-            border: "2px solid pink",
-            fontSize: "20px",
-            overflow: "auto"
-          }}
+          style={{ borderColor: "pink" }}
+          className="resultDiv"
           dangerouslySetInnerHTML={{ __html: content }}
         ></div>
       </div>
