@@ -4,6 +4,7 @@ import GitHubButton from "react-github-btn";
 import Filter from "./Filter";
 import Phonetic from "./Phonetic";
 import Main from "./Main";
+import Missing from "./Missing";
 import "./App.css";
 import {
   BrowserRouter as Router,
@@ -61,6 +62,7 @@ const App = () => {
           <Route path="/Phonetic" component={Phonetic} />
           <Route path="/Filter" component={Filter} />
           <Redirect to="/"></Redirect>
+          <Route component={Missing} />
         </Switch>
       </Router>
     </div>
